@@ -64,7 +64,7 @@ install bin/Release/eperftool $RPM_BUILD_ROOT%{_bindir}
 cp -a bin/Release/libopenfec.so* $RPM_BUILD_ROOT%{_libdir}
 
 cp -p src/lib_advanced/ldpc_from_file/{of_codec_profile,of_ldpc_ff_api}.h $RPM_BUILD_ROOT%{_includedir}/openfec/lib_advanced/ldpc_from_file
-cp -p src/lib_common/{of_debug,of_openfec_api,of_openfec_profile,of_types}.h $RPM_BUILD_ROOT%{_includedir}/openfec/lib_common
+cp -p src/lib_common/{of_debug,of_mem,of_openfec_api,of_openfec_profile,of_types}.h $RPM_BUILD_ROOT%{_includedir}/openfec/lib_common
 cp -p src/lib_stable/2d_parity_matrix/{of_2d_parity_api,of_codec_profile}.h $RPM_BUILD_ROOT%{_includedir}/openfec/lib_stable/2d_parity_matrix
 cp -p src/lib_stable/ldpc_staircase/{of_codec_profile,of_ldpc_staircase_api}.h $RPM_BUILD_ROOT%{_includedir}/openfec/lib_stable/ldpc_staircase
 cp -p src/lib_stable/reed-solomon_gf_2_8/{of_codec_profile,of_reed-solomon_gf_2_8_api}.h $RPM_BUILD_ROOT%{_includedir}/openfec/lib_stable/reed-solomon_gf_2_8
