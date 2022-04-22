@@ -9,6 +9,7 @@ Group:		Libraries
 #Source0Download: http://openfec.org/downloads.html
 Source0:	http://openfec.org/files/%{name}_v%{tagver}.tgz
 # Source0-md5:	c4f8b0aa3e9352f2e713e3db2885ea1c
+Patch0:		%{name}-opt.patch
 URL:		http://openfec.org/
 BuildRequires:	cmake >= 2.6
 BuildRequires:	rpmbuild(macros) >= 1.605
@@ -47,6 +48,7 @@ Pliki nagłówkowe biblioteki OpenFEC.
 
 %prep
 %setup -q -n %{name}_v%{version}
+%patch0 -p1
 
 %build
 install -d build
@@ -60,8 +62,8 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}}
 install -d $RPM_BUILD_ROOT%{_includedir}/openfec/{lib_advanced/ldpc_from_file,lib_common,lib_stable/{2d_parity_matrix,ldpc_staircase,reed-solomon_gf_2_{8,m}}}
 
-install bin/Release/eperftool $RPM_BUILD_ROOT%{_bindir}
-cp -a bin/Release/libopenfec.so* $RPM_BUILD_ROOT%{_libdir}
+install bin/PLD/eperftool $RPM_BUILD_ROOT%{_bindir}
+cp -a bin/PLD/libopenfec.so* $RPM_BUILD_ROOT%{_libdir}
 
 cp -p src/lib_advanced/ldpc_from_file/{of_codec_profile,of_ldpc_ff_api}.h $RPM_BUILD_ROOT%{_includedir}/openfec/lib_advanced/ldpc_from_file
 cp -p src/lib_common/{of_debug,of_mem,of_openfec_api,of_openfec_profile,of_types}.h $RPM_BUILD_ROOT%{_includedir}/openfec/lib_common
