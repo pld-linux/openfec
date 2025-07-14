@@ -48,7 +48,7 @@ Pliki nagłówkowe biblioteki OpenFEC.
 
 %prep
 %setup -q -n %{name}_v%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 install -d build
